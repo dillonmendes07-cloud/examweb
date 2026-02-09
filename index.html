@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | Examination Integrity Awareness System</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937;
+        }
+
+        .navbar {
+            background-color: #1e1b4b;
+        }
+
+        /* ===== NAVBAR INTERACTIVITY ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(8px);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Shadow appears on scroll */
+.navbar.scrolled {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Nav links */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+/* Animated underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: #facc15; /* yellow accent */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Active page underline stays visible */
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+        .hero {
+            background-image: url('Home_background.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            background: rgba(30, 27, 75, 0.55);
+        }
+
+        .hero-animate {
+            animation: fadeUp 1.2s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-card {
+            border: 1px solid #e5e7eb;
+            border-left: 6px solid #1e1b4b;
+            border-radius: 12px;
+            padding: 32px;
+            background-color: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 28px rgba(30,27,75,0.12);
+        }
+
+        .interactive-column {
+            border-left: 4px solid #1e1b4b;
+            padding-left: 24px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .interactive-column:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(30,27,75,0.15);
+        }
+
+        /* SCROLL REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+        <img src="nm_logo.png" alt="College Logo" class="h-10">
+        <span class="text-yellow-400 font-bold">
+            Examination Integrity Portal
+        </span>
+    </div>
+
+    <ul class="flex space-x-6 text-white font-semibold">
+    <li><a href="home.html" class="nav-link active">Home</a></li>
+    <li><a href="rules.html" class="nav-link">Exam Rules</a></li>
+    <li><a href="offence.html" class="nav-link">Offences</a></li>
+    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+</ul>
+
+</nav>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero min-h-[75vh] relative">
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <div class="relative max-w-6xl px-12 pt-16 text-white hero-animate">
+
+        <div class="flex items-center space-x-4 mb-10">
+            <img src="nm_logo.png" class="h-16">
+            <div class="text-sm text-gray-200 leading-snug">
+                <p class="font-semibold">Shri Vile Parle Kelavani Mandal's</p>
+                <p class="font-semibold">
+                    Narsee Monjee College of Commerce & Economics (Autonomous)
+                </p>
+                <p>
+                    NAAC Accredited 'A', CGPA: 3.42<br>
+                    Affiliated to University of Mumbai
+                </p>
+            </div>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 max-w-3xl">
+            Examination Integrity Awareness System
+        </h1>
+
+        <p class="text-lg max-w-3xl text-gray-200 leading-relaxed">
+            This website is developed as part of an academic initiative to create
+            awareness among students regarding examination rules, examination
+            offences, and ethical conduct during examinations.
+        </p>
+    </div>
+</section>
+
+<!-- ================= ABOUT SECTION ================= --> 
+ <section class="max-w-6xl mx-auto mt-20 px-6"> 
+    <div class="section-card"> 
+        <h2 class="text-3xl font-bold text-indigo-900 mb-6"> About </h2>
+         <p class="text-gray-700 leading-relaxed mb-4"> Shri Vile Parle Kelavani Mandal (SVKM) is a professionally managed educational trust established in the year 1934 with the objective of providing quality education to students. Over the decades, the trust has grown to include several prestigious educational institutions and is known for its commitment to academic excellence, discipline, and ethical values. </p>
+          <p class="text-gray-700 leading-relaxed mb-4"> Narsee Monjee College of Commerce and Economics, established in 1964, functions under SVKM and focuses on holistic development of learners by combining academic rigor with ethical foundations. The college aims to prepare students for professional success and responsible citizenship. </p> 
+          <p class="text-gray-700 leading-relaxed mb-4"> Examination integrity is a vital component of the academic framework. Fair evaluation practices, adherence to examination rules, and ethical conduct during examinations ensure transparency and credibility in the assessment process. </p>
+           <p class="text-gray-700 leading-relaxed"> This website has been developed as an awareness initiative to educate students about examination rules, examination offences, and the importance of honesty and discipline during examinations. </p> 
+        </div>
+ </section>
+
+<!-- ================= INTERLINKING SECTION ================= -->
+<section class="max-w-6xl mx-auto mt-20 px-6 reveal">
+    <h2 class="text-2xl font-bold text-indigo-900 mb-10 text-center">
+        Explore Website Sections
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="interactive-column" onclick="location.href='rules.html'">
+            <h3 class="text-xl font-semibold text-indigo-900 mb-2">
+                Examination Rules
+            </h3>
+            <p class="text-gray-700">
+                Guidelines to be followed before and during examinations.
+            </p>
+        </div>
+
+        <div class="interactive-column" onclick="location.href='offence.html'">
+            <h3 class="text-xl font-semibold text-indigo-900 mb-2">
+                Examination Offences
+            </h3>
+            <p class="text-gray-700">
+                Awareness of offences and corresponding punishments.
+            </p>
+        </div>
+
+        <div class="interactive-column" onclick="location.href='faq.html'">
+            <h3 class="text-xl font-semibold text-indigo-900 mb-2">
+                FAQ
+            </h3>
+            <p class="text-gray-700">
+                Answers to common examination-related questions.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="mt-24 py-6 text-center text-indigo-900 font-semibold">
+    Developed for academic awareness and examination integrity purposes.
+</footer>
+
+<!-- ================= POSTER POPUP MODAL ================= -->
+<div id="imageModal"
+     class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 hidden">
+
+    <button onclick="closeModal()"
+            class="absolute top-6 right-6 text-white text-4xl
+                   font-bold hover:text-gray-300 transition z-50">
+        ×
+    </button>
+
+    <a href="Examination-guidelines-for-UG-PG-programs.pdf"
+       target="_blank"
+       class="flex flex-col items-center">
+
+        <img src="Poster.jpeg"
+             alt="Examination Awareness Poster"
+             class="max-w-[90vw] max-h-[85vh]
+                    object-contain shadow-2xl
+                    rounded-xl cursor-pointer">
+
+        <p class="mt-4 text-sm text-gray-200">
+            Click the poster to view official examination guidelines
+        </p>
+    </a>
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+    window.onload = function () {
+        setTimeout(() => {
+            document.getElementById("imageModal").classList.remove("hidden");
+        }, 800);
+    };
+
+    function closeModal() {
+        document.getElementById("imageModal").classList.add("hidden");
+    }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+        reveals.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) {
+                el.classList.add("active");
+            }
+        });
+    });
+    // Navbar shadow on scroll
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+</script>
+
+
+</body>
+</html>

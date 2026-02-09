@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ | Examination Ethics Portal</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937;
+        }
+
+        /* ===== INTERACTIVE NAVBAR ===== */
+        .navbar {
+            background-color: #1e1b4b;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(8px);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 0%;
+            height: 2px;
+            background-color: #facc15;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* ===== FAQ CARD ===== */
+        .faq-card {
+            border-left: 6px solid #1e1b4b;
+            background-color: #f9fafb;
+            padding: 22px;
+            border-radius: 12px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .faq-card.open {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(30,27,75,0.15);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-answer.show {
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-card.open .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+        <img src="nm_logo.png" class="h-10">
+        <span class="text-yellow-400 font-bold">
+            Examination Ethics Portal
+        </span>
+    </div>
+
+    <ul class="flex space-x-6 text-white font-semibold">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="rules.html" class="nav-link">Exam Rules</a></li>
+        <li><a href="offence.html" class="nav-link">Offences</a></li>
+        <li><a href="faq.html" class="nav-link active">FAQ</a></li>
+    </ul>
+</nav>
+
+<!-- ================= PAGE HEADER ================= -->
+<section class="mt-12 reveal">
+    <div class="max-w-6xl mx-auto px-6 py-16 rounded-2xl
+                bg-gradient-to-r from-indigo-50 to-blue-50
+                border border-indigo-100 text-center">
+
+        <h1 class="text-4xl font-extrabold text-indigo-900 mb-4">
+            Frequently Asked Questions
+        </h1>
+
+        <div class="w-24 h-1 bg-indigo-600 mx-auto mb-6 rounded-full"></div>
+
+        <p class="text-gray-700 text-lg max-w-4xl mx-auto leading-relaxed">
+            This section addresses common doubts related to examination rules,
+            offences, and student responsibilities, helping students understand
+            procedures clearly and confidently.
+        </p>
+    </div>
+</section>
+
+<!-- ================= FAQ SECTION ================= -->
+<section class="max-w-5xl mx-auto mt-20 px-6 space-y-6 reveal">
+
+    <!-- FAQ TEMPLATE -->
+    <div class="faq-card">
+        <button class="w-full text-left flex justify-between items-center"
+                onclick="toggleFAQ(this)">
+            <h2 class="text-lg font-semibold text-indigo-900">
+                Is carrying a mobile phone inside the examination hall allowed?
+            </h2>
+            <span class="faq-icon text-2xl text-indigo-900">+</span>
+        </button>
+        <p class="faq-answer mt-4 text-gray-700">
+            No. Carrying mobile phones, smart watches, or any electronic devices
+            inside the examination hall is strictly prohibited, even if the device
+            is switched off.
+        </p>
+    </div>
+
+    <div class="faq-card">
+        <button class="w-full text-left flex justify-between items-center"
+                onclick="toggleFAQ(this)">
+            <h2 class="text-lg font-semibold text-indigo-900">
+                What happens if a student is found with unauthorized material?
+            </h2>
+            <span class="faq-icon text-2xl text-indigo-900">+</span>
+        </button>
+        <p class="faq-answer mt-4 text-gray-700">
+            Possession of unauthorized material is treated as an examination offence.
+            Punishment may include cancellation of the examination and further
+            disciplinary action.
+        </p>
+    </div>
+
+    <div class="faq-card">
+        <button class="w-full text-left flex justify-between items-center"
+                onclick="toggleFAQ(this)">
+            <h2 class="text-lg font-semibold text-indigo-900">
+                Can a student leave the examination hall before time?
+            </h2>
+            <span class="faq-icon text-2xl text-indigo-900">+</span>
+        </button>
+        <p class="faq-answer mt-4 text-gray-700">
+            Students are generally not allowed to leave the examination hall
+            before the completion of the examination unless permitted by the
+            invigilator.
+        </p>
+    </div>
+
+    <div class="faq-card">
+        <button class="w-full text-left flex justify-between items-center"
+                onclick="toggleFAQ(this)">
+            <h2 class="text-lg font-semibold text-indigo-900">
+                What is considered copying during an examination?
+            </h2>
+            <span class="faq-icon text-2xl text-indigo-900">+</span>
+        </button>
+        <p class="faq-answer mt-4 text-gray-700">
+            Copying includes obtaining answers from another candidate,
+            exchanging information, or using any unauthorized source during
+            the examination.
+        </p>
+    </div>
+
+    <div class="faq-card">
+        <button class="w-full text-left flex justify-between items-center"
+                onclick="toggleFAQ(this)">
+            <h2 class="text-lg font-semibold text-indigo-900">
+                What should a student do if there is an issue with the question paper?
+            </h2>
+            <span class="faq-icon text-2xl text-indigo-900">+</span>
+        </button>
+        <p class="faq-answer mt-4 text-gray-700">
+            Students should immediately inform the invigilator and follow
+            the instructions provided. They should not attempt to resolve
+            the issue on their own.
+        </p>
+    </div>
+
+    <div class="faq-card">
+        <button class="w-full text-left flex justify-between items-center"
+                onclick="toggleFAQ(this)">
+            <h2 class="text-lg font-semibold text-indigo-900">
+                Who decides the punishment for examination offences?
+            </h2>
+            <span class="faq-icon text-2xl text-indigo-900">+</span>
+        </button>
+        <p class="faq-answer mt-4 text-gray-700">
+            The Examination Committee and designated authorities investigate
+            examination offences and decide the appropriate disciplinary action.
+            Their decision is final and binding.
+        </p>
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="mt-24 py-6 text-center text-indigo-900 font-semibold">
+    Awareness and compliance with examination rules ensure academic ethics.
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+    function toggleFAQ(button) {
+        const card = button.parentElement;
+        const answer = card.querySelector('.faq-answer');
+        const icon = card.querySelector('.faq-icon');
+
+        document.querySelectorAll('.faq-card').forEach(c => {
+            if (c !== card) {
+                c.classList.remove('open');
+                c.querySelector('.faq-answer').classList.remove('show');
+                c.querySelector('.faq-icon').textContent = '+';
+            }
+        });
+
+        card.classList.toggle('open');
+        answer.classList.toggle('show');
+        icon.textContent = card.classList.contains('open') ? '−' : '+';
+    }
+
+    const navbar = document.querySelector(".navbar");
+    window.addEventListener("scroll", () => {
+        navbar.classList.toggle("scrolled", window.scrollY > 20);
+    });
+
+    const reveals = document.querySelectorAll(".reveal");
+    window.addEventListener("scroll", () => {
+        reveals.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                el.classList.add("active");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

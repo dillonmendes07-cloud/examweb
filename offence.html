@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Examination Offences & Punishments</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937;
+        }
+
+        /* ===== INTERACTIVE NAVBAR  ===== */
+        .navbar {
+            background-color: #1e1b4b;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(8px);
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+/* Shadow appears when scrolling */
+.navbar.scrolled {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Nav link underline animation */
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #facc15;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Active page underline stays */
+.nav-link.active::after {
+    width: 100%;
+}
+
+        /* HEADER */
+        .page-hero {
+            background: linear-gradient(135deg, #7c2d12, #1e1b4b);
+        }
+
+        /* OFFENCE CARD */
+        .offence-section {
+            border-left: 6px solid #7c2d12;
+            background-color: #fef2f2;
+            padding: 30px;
+            border-radius: 14px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .offence-section:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(124,45,18,0.2);
+        }
+
+        .offence-section img {
+            width: 100%;
+            border-radius: 14px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .offence-section img:hover {
+            transform: scale(1.06);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar px-8 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+        <img src="nm_logo.png" class="h-10">
+        <span class="text-yellow-400 font-bold">
+            Examination Ethics Portal
+        </span>
+    </div>
+
+    <ul class="flex space-x-6 text-white font-semibold">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="rules.html" class="nav-link">Exam Rules</a></li>
+        <li><a href="offence.html" class="nav-link active">Offences</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+
+    </ul>
+</nav>
+
+<!-- ATTRACTIVE HEADER -->
+<section class="mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-16 rounded-2xl
+                bg-gradient-to-r from-red-50 to-slate-50
+                border border-red-100 text-center
+                transition-transform duration-500 hover:scale-[1.01]">
+
+        <h1 class="text-4xl md:text-5xl font-extrabold text-red-900 mb-4">
+            Examination Offences and Punishments
+        </h1>
+
+        <div class="w-28 h-1 bg-red-700 mx-auto mb-6 rounded-full"></div>
+
+        <p class="text-gray-700 text-lg max-w-4xl mx-auto leading-relaxed">
+            This section explains various examination-related offences and the
+            disciplinary actions that may be taken to ensure fairness,
+            discipline, and academic ethics.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- OFFENCES -->
+<section class="max-w-6xl mx-auto mt-20 px-6 space-y-16 reveal">
+
+    <!-- TEMPLATE USED FOR ALL SECTIONS -->
+    <!-- 1 -->
+    <div class="offence-section flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold text-red-900 mb-3">
+                Possession of Copying Material 
+            </h2>
+            <p class="text-gray-700">
+                Possession of any copying material such as notes, chits, books, printed matter, 
+                or any unauthorized reference material inside the examination hall is treated 
+                as a serious examination offence, irrespective of whether the material is actually 
+                used during the examination. Such possession is considered an attempt to adopt 
+                unfair means and compromises the integrity and fairness of the examination process.
+            </p>
+            <p class="mt-4 p-3 bg-red-50 border-l-4 border-red-700 text-red-900 font-semibold rounded-md">
+                 In such cases, the performance of the learner at the College Examination
+                  shall be annulled in full, resulting in cancellation of the entire 
+                  examination attempt. Further disciplinary action may be taken as per 
+                  institutional rules.
+            </p>
+        </div>
+        <div class="md:w-1/3">
+            <img src="unauthorized.png">
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="offence-section flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold text-red-900 mb-3">
+                Possession of Copying Material with Actual Copying
+ 
+            </h2>
+            <p class="text-gray-700">
+                Possession of any copying material such as written notes,
+                 printed matter, textbooks, chits, or any unauthorized reference material
+                inside the examination hall, along with actual copying or attempting to
+                copy from such material, is considered a serious violation of examination
+                rules. Such conduct undermines academic integrity and compromises the
+                fairness of the examination process. This offence applies irrespective of
+                the quantity of material possessed and includes any attempt to gain unfair
+                 advantage during the examination.
+            </p>
+            <p class="mt-4 p-3 bg-red-50 border-l-4 border-red-700 text-red-900 font-semibold rounded-md">
+                The learner shall be excluded from the College Examinations concerned for one subsequent examination.
+
+            </p>
+        </div>
+        <div class="md:w-1/3">
+            <img src="phone.jpg">
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="offence-section flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold text-red-900 mb-3">
+                Mutual / Mass copying
+            </h2>
+            <p class="text-gray-700">
+                Mutual or mass copying refers to a situation where two or more learners are found to 
+                be copying from one another or are collectively involved in the exchange of answers or 
+                information during the examination. Such behaviour may include sharing answer sheets, 
+                communicating answers verbally or through signals, or any coordinated attempt by a group 
+                of learners to gain unfair advantage. Mutual or mass copying is considered a grave offence 
+                as it directly compromises the integrity, fairness, and credibility of the examination process.
+            </p>
+            <p class="mt-4 p-3 bg-red-50 border-l-4 border-red-700 text-red-900 font-semibold rounded-md">
+                All learners involved in mutual or mass copying shall be excluded from the College Examinations 
+                concerned for two subsequent examinations, along with any further disciplinary action as deemed 
+                appropriate by the Examination Committee.
+            </p>
+        </div>
+        <div class="md:w-1/3">
+            <img src="copying.jpg">
+        </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="offence-section flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold text-red-900 mb-3">
+                Impersonation 
+            </h2>
+            <p class="text-gray-700">
+                Impersonation refers to appearing for an examination on behalf of another learner or allowing another 
+                individual to appear in one’s place in any College or other examination. Such acts involve deliberate 
+                misrepresentation of identity and constitute a serious breach of examination rules and academic integrity. 
+                Impersonation undermines the credibility of the examination system and is regarded as a grave form of 
+                examination malpractice.
+            </p>
+            <p class="mt-4 p-3 bg-red-50 border-l-4 border-red-700 text-red-900 font-semibold rounded-md">
+               The learner shall be excluded from the College Examinations concerned for five subsequent examinations. 
+               In cases where the impersonator is also a learner of the College, both learners involved shall be subject 
+               to the same punishment, along with any further disciplinary action as decided by the Examination Committee.
+            </p>
+        </div>
+        <div class="md:w-1/3">
+            <img src="impersonation.jpg">
+        </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="offence-section flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold text-red-900 mb-3">
+                Tampering with Answer Books or Documents
+            </h2>
+            <p class="text-gray-700">
+                Interfering with, tampering, or counterfeiting the College seal, answer books, or any official office 
+                stationery used in the conduct of examinations, with the intention of misleading the examination authorities, 
+                is considered a grave and premeditated offence. Such actions include falsification of official documents, 
+                misuse of institutional seals, or manipulation of examination materials to gain unfair advantage. This offence 
+                directly undermines the credibility, authenticity, and integrity of the examination system and is viewed as a 
+                serious breach of institutional trust and discipline.
+            </p>
+            <p class="mt-4 p-3 bg-red-50 border-l-4 border-red-700 text-red-900 font-semibold rounded-md">
+                The learner shall be excluded from the College Examinations concerned for four subsequent examinations, in addition 
+                to any further disciplinary action as decided by the Examination Committee.
+            </p>
+        </div>
+        <div class="md:w-1/3">
+            <img src="tampering.png">
+        </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="offence-section flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold text-red-900 mb-3">
+                Misconduct and Indiscipline
+            </h2>
+            <p class="text-gray-700">
+                Using obscene, abusive, or threatening language, or issuing violent threats inside the examination hall by a learner 
+                towards the room supervisor, invigilator, or any other examination authority is considered a serious act of misconduct. 
+                Such behaviour disrupts the examination environment, creates fear or intimidation, and undermines the authority of 
+                examination personnel. This offence includes verbal abuse, aggressive conduct, or any form of threatening behaviour 
+                intended to influence or obstruct the fair conduct of the examination.
+            </p>
+            <p class="mt-4 p-3 bg-red-50 border-l-4 border-red-700 text-red-900 font-semibold rounded-md">
+                The learner shall be excluded from the College Examinations concerned for four subsequent examinations, in addition 
+                to any further disciplinary action as decided by the Examination Committee.
+            </p>
+        </div>
+        <div class="md:w-1/3">
+            <img src="misconduct.png">
+        </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="offence-section flex flex-col md:flex-row gap-8 items-center">
+        <div class="md:w-2/3">
+            <h2 class="text-2xl font-bold text-red-900 mb-3">
+                Insertion of currency notes/ bribing or attempt to bribe
+            </h2>
+            <p class="text-gray-700">
+                Insertion of currency notes or offering monetary benefits, including any attempt to bribe a person connected with the conduct 
+                of the examination such as an invigilator, supervisor, or other examination authority, is considered a serious act of 
+                examination misconduct. Such behaviour compromises the fairness and integrity of the examination process and is treated as a 
+                grave violation of institutional discipline.
+            </p>
+            <p class="mt-4 p-3 bg-red-50 border-l-4 border-red-700 text-red-900 font-semibold rounded-md">
+               The learner shall be excluded from the College Examinations concerned for four subsequent examinations. Any money involved in 
+               the offence shall be confiscated and credited to the Learners’ Welfare Fund, as per institutional rules.
+            </p>
+        </div>
+        <div class="md:w-1/3">
+            <img src="Bribe.png">
+        </div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="mt-24 py-6 text-center text-red-900 font-semibold">
+    Strict disciplinary measures ensure fairness and academic ethics.
+</footer>
+
+<!-- SCROLL REVEAL -->
+<script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.add('opacity-0', 'translate-y-8', 'transition', 'duration-700');
+        observer.observe(el);
+    });
+    /* ===== NAVBAR SCROLL EFFECT  ===== */
+    const navbar = document.querySelector(".navbar");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+</script>
+
+</body>
+</html>
